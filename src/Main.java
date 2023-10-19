@@ -83,7 +83,7 @@ public class Main {
 				change = coffeeMaker.makeLatte(amtPaid);
 				break;
 			}
-
+			
 			if (change == amtPaid) {
 				System.out.println("Insufficient funds to purchase.");
 			} else {

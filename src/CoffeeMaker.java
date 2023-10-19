@@ -1,3 +1,10 @@
+class InventoryException extends Exception
+{
+	InventoryException(String num) {
+		super(num);
+	}
+}
+
 public class CoffeeMaker {
 
 	/** Inventory in the coffee maker */
@@ -60,9 +67,12 @@ public class CoffeeMaker {
 	 * @return boolean
 	 */
 	public void addIngredients(int amtCoffee, int amtMilk) throws Exception {
-
-		this.coffee = this.coffee+amtCoffee;
-		this.milk = this.milk+amtMilk;
+	if(amtCoffee <0 || amtMilk < 0) {
+		throw new InventoryException("Error, number can't be negavtive.");
+	}
+			this.coffee = this.coffee+amtCoffee;
+			this.milk = this.milk+amtMilk;
+		
 	}
 
 	/**
